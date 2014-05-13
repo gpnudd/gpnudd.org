@@ -49,8 +49,8 @@
         });
         var url = 'http://gpnudd.org/#' + name;
         output = output.replace('(YOUR_NAME)', '<a href="' + url + '">' + name+ '</a>');
-        output = output.replace('(YOUR_LINK)', '<a href="' + url + '">' + url + '</a>');
-        document.getElementById('markdownArea').innerHTML = output;
+        var link = '<h1>永久連結：<a href="' + url + '">' + url + '</a></h1>';
+        document.getElementById('markdownArea').innerHTML = output + link;
       } else {
         output = output.replace('(YOUR_NAME)', '<input type="text" id="nameTextBox"/ placeholder="請輸入名稱, 按下 Enter" maxlength="20" style="font-size:28px">');
         document.getElementById('markdownArea').innerHTML = output;
