@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>通用公共不枉死聲明 | GPNUDD.ORG</title>
+  <title>通用公共不枉死聲明 | General Public Not Unnecessary Death Declaration | GPNUDD.ORG</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="//cdn.rawgit.com/jasonm23/markdown-css-themes/gh-pages/avenir-white.css" >
   <style type="text/css">
@@ -44,10 +44,12 @@
 
       if(window.location.hash) {
         var hash = window.location.hash.substring(1);
-        hashEncoded = hash.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+        var name = hash.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
           return '&#'+i.charCodeAt(0)+';';
         });
-        output = output.replace('(YOUR_NAME)', '<a href="http://gpnudd.org/#' + hashEncoded + '">' + hashEncoded+ '</a>');
+        var url = 'http://gpnudd.org/#' + name;
+        output = output.replace('(YOUR_NAME)', '<a href="' + url + '">' + name+ '</a>');
+        output = output.replace('(YOUR_LINK)', '<a href="' + url + '">' + url + '</a>');
         document.getElementById('markdownArea').innerHTML = output;
       } else {
         output = output.replace('(YOUR_NAME)', '<input type="text" id="nameTextBox"/ placeholder="請輸入名稱, 按下 Enter" maxlength="20" style="font-size:28px">');
@@ -70,3 +72,4 @@
     </script>
   </body>
 </html>
+
