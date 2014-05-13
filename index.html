@@ -57,6 +57,7 @@
         document.getElementById('markdownArea').innerHTML = output;
         document.getElementById("nameTextBox").addEventListener('keydown', function (event) {
           if (event.keyCode == 13) {
+            ga('send', 'event', 'get_gpnudd', 'enter', document.getElementById("nameTextBox").value);
             window.location.href = '/#' + document.getElementById("nameTextBox").value;
             window.location.reload();
           }
